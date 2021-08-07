@@ -1,0 +1,24 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type CompanyType {
+  id: ID!
+  name: String!
+  rnc: Int!
+  description: String!
+}
+
+type Query {
+  hello: String!
+}
+
+type Mutation {
+  createCompany(input: CompanyInput!): CompanyType!
+}
+
+input CompanyInput {
+  name: String!
+  rnc: Int!
+  description: String!
+}
