@@ -31,33 +31,71 @@
 ## Installation
 
 ```bash
-$ npm install
+$ yarn install
 ```
 
 ## Running the app
 
 ```bash
 # development
-$ npm run start
+$ yarn start
 
 # watch mode
-$ npm run start:dev
+$ yarn start:dev
 
 # production mode
-$ npm run start:prod
+$ yarn start:prod
 ```
 
 ## Test
 
 ```bash
 # unit tests
-$ npm run test
+$ yarn test
 
 # e2e tests
-$ npm run test:e2e
+$ yarn test:e2e
 
 # test coverage
-$ npm run test:cov
+$ yarn test:cov
 ```
 
 
+# Example Querys and mutations
+```graphql
+mutation createCompany {
+  createCompany(
+    input: {
+      name: "Listo"
+      document: 568141
+      description: "Compañia de telecomunicaciónes"
+      phone: "8091231231"
+      email: "clasro@gmail.com"
+    }
+  ) {
+    id
+    name
+  }
+}
+
+query companies {
+  companies {
+    id
+    name
+    description
+    document
+  }
+}
+
+query company {
+  company(id: "610ee038492ae267604c3a1f") {
+    name
+  }
+}
+
+mutation deletedeleteCompany {
+  deleteCompany(id: "610ee038492ae267604c3a1f") {
+    name
+  }
+}
+```
