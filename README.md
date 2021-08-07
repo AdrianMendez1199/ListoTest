@@ -68,9 +68,9 @@ mutation createCompany {
     input: {
       name: "Listo"
       document: 568141
-      description: "Compañia de telecomunicaciónes"
+      description: "Compañia de software"
       phone: "8091231231"
-      email: "clasro@gmail.com"
+      email: "info@gmail.com"
     }
   ) {
     id
