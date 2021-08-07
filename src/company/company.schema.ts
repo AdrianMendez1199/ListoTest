@@ -6,11 +6,11 @@ export type CompanyDocument = Company & Document;
 @Schema()
 export class Company {
   
-  @Prop({ required: true })
+  @Prop({ required: true, unique: true })
   name: string;
 
-  @Prop({ required: true })
-  rnc: number;
+  @Prop({ required: true, unique: true })
+  document: number;
 
   @Prop({ required: true, default: true })
   status: boolean;
@@ -18,6 +18,12 @@ export class Company {
   @Prop()
   description: string;
   
+  @Prop()
+  phone: string;
+
+  @Prop({ unique: true })
+  email: string;
+
 }
 
 export const CompanySchema = SchemaFactory.createForClass(Company);

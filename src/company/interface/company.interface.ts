@@ -2,6 +2,8 @@ import { Document } from 'mongoose';
 
 export interface Company extends Document {
    name: string;
-   rnc: number;  
+   document: number;  
    description: string;
+   phone: string;
+   email: string;
 }

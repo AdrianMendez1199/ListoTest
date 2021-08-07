@@ -7,8 +7,14 @@ export class CompanyInput {
   readonly name: string;
   
   @Field(() => Int)
-  readonly rnc: number;
+  readonly document: number;
 
   @Field()
   readonly description: string;
+
+  @Field()
+  readonly phone: string;
+
+  @Field()
+  readonly email: string;
 }

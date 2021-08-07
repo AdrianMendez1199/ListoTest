@@ -10,8 +10,14 @@ export class CompanyType {
   readonly name: string;
   
   @Field(() => Int)
-  readonly rnc: number;
+  readonly document: number;
+
+  @Field({ nullable: true })
+  readonly description: string;
 
   @Field()
-  readonly description: string;
+  readonly phone: string;
+
+  @Field()
+  readonly email: string;
 }

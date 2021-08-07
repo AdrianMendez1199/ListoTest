@@ -10,15 +10,25 @@ export class CompanyResolver {
      private readonly companyService: CompanyService
     ) {}
 
-  @Query(() => String)
-  async hello() {
-    return 'Hello';
-  }
-
   @Mutation(() => CompanyType)
   async createCompany(@Args('input') input: CompanyInput) {
     const company = this.companyService.create(input);
     return company;
+  }
+
+  @Query(() => [CompanyType], { nullable: 'items' })
+  async companies() {
+    return this.companyService.findAll();
+  }
+
+  @Query(() => CompanyType)
+  async company(@Args('id') id: string) {
+    return this.companyService.findById(id);
+  }
+
+  @Mutation(() => CompanyType)
+  async deleteCompany(@Args('id') id: string) {
+    return this.companyService.delete(id);
   }
 
 }

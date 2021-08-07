@@ -5,20 +5,26 @@
 type CompanyType {
   id: ID!
   name: String!
-  rnc: Int!
-  description: String!
+  document: Int!
+  description: String
+  phone: String!
+  email: String!
 }
 
 type Query {
-  hello: String!
+  companies: [CompanyType]!
+  company(id: String!): CompanyType!
 }
 
 type Mutation {
   createCompany(input: CompanyInput!): CompanyType!
+  deleteCompany(id: String!): CompanyType!
 }
 
 input CompanyInput {
   name: String!
-  rnc: Int!
+  document: Int!
   description: String!
+  phone: String!
+  email: String!
 }
